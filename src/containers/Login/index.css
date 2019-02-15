@@ -1,0 +1,65 @@
+.login-header {
+  text-align: center;
+  padding: 0.8rem 0;
+}
+.login-header img {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 6px;
+  border-radius: 0.9rem;
+  background-color: #fff;
+}
+.user {
+  background-color: #fff;
+  position: relative;
+}
+.user span {
+  position: absolute;
+  left: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.4rem;
+  z-index: 1;
+}
+.user .input {
+  width: 100%;
+  padding: 0 0.7rem;
+  height: 0.9rem;
+  border-radius: 0;
+  border-right: none;
+  border-left: none;
+}
+.user .password {
+  border-top: 1px solid transparent;
+}
+.forgetPwd {
+  float: right;
+  line-height: 0.8rem;
+  color: #22d37a;
+}
+.button {
+  margin-bottom: 0.4rem;
+  color: #fff;
+  border: none;
+  height: 0.8rem;
+}
+.login {
+  background-color: #22d37a;
+}
+.register {
+  background-color: #feaf5f;
+}
+.login:hover,
+.login:focus,
+.login:active,
+.login.active {
+  background: #1eb66a;
+  color: #fff;
+}
+.register:hover,
+.register:focus,
+.register:active,
+.register.active {
+  background: #eb9d4f;
+  color: #fff;
+}
