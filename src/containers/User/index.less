@@ -1,0 +1,43 @@
+// 头像
+.user-header{
+    text-align: center;
+    height: 4.4rem;
+    position: relative;
+    background-image: linear-gradient(to bottom,#20D378 ,#42ced0);
+    >div{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        color:#fff;
+        img{
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            padding: 2px;
+            background: #fff;
+        }
+    }
+}
+// item
+.user-item{
+    overflow: hidden;
+    line-height: 0.38rem;
+    font-size:0.28rem;
+    color:#333;
+    .item-icon,.item-text{
+        float: left;
+        margin-right: 0.08rem;
+        img{
+            height: 0.38rem;
+            vertical-align: top;
+        }
+    }
+    .item-arrow{
+        float: right;
+        color:#999999;
+        *{
+            display: inline-block;
+        }
+    }
+}

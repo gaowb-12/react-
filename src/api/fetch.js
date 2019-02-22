@@ -11,7 +11,13 @@ async function LoginSucc(data) {
     const res = await postFetch(commonUrl+"user/ak/"+window.platform_key+"/login.anys", data);
     return res.json();
 }
+// 获取用户信息
+async function GetUserinfo(data,cancelToken) {
+    const res = await postFetch(commonUrl+"user/ak/"+window.platform_key+"/user/"+localStorage.getItem("user_id")+"/userinfo.json",data);
+    return res.json();
+}
 
 export {
-    LoginSucc
+    LoginSucc,
+    GetUserinfo
 }

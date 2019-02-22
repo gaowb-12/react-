@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux"
+import { actionCreators } from "../../store/userInfo";
+import { authActionCreators } from "../../store/auth";
 import { Input,Button } from "antd";
 import "./index.less"
 import { LoginSucc } from "../../api/fetch";
 
+const mapStateToProps=(state)=>{
+    return state
+}
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        updateUserInfo(user){//更新用户信息
+            dispatch(actionCreators.updateUserInfo(user))
+        },
+        updateLoginState(isLogin){//更新登录状态
+            dispatch(authActionCreators.updateLoginState(isLogin))
+        }
+    }
+}
 class Login extends Component {
     constructor(props){
         super(props)
@@ -13,7 +29,8 @@ class Login extends Component {
             username:"15210053055",//用户名
             password:"111111",//密码
             dev_id:"101",
-            dev_name:"gao"
+            dev_name:"gao",
+            val:0
         }
     }
     // [key]=username输入用户名  [key]=password输入密码
@@ -32,10 +49,12 @@ class Login extends Component {
             dev_name:this.state.dev_name,
         })
         .then((res)=>{
-            console.log(res)
+            // console.log(res)
             if(res.errcode==110){
                 localStorage.setItem("access_token", res.access_token);
                 localStorage.setItem("user_id", res.user_info.user_id);
+                this.props.updateUserInfo(res.user_info);
+                this.props.updateLoginState(true);
                 this.props.history.push("/user")
             }
         })
@@ -74,7 +93,6 @@ class Login extends Component {
                 <div style={{overflow:"hidden"}}>
                     <Link className="forgetPwd" to="/login">忘记密码？</Link>
                 </div>
-
                 {/* 登录，注册 */}
                 <div style={{padding:"0 0.2rem"}}>
                     <div onClick={this.submit}><Button className="button login" block>登录</Button></div>
@@ -87,4 +105,4 @@ class Login extends Component {
         )
     }
 }
-export default Login
+export default connect(mapStateToProps,mapDispatchToProps)(Login)
