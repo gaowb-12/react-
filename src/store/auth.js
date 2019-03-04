@@ -4,7 +4,7 @@ export const actions={
 }
 // 登录状态
 const loginState={
-    isLogin:localStorage.getItem("access_token")?true:false,
+    isLogin:localStorage.getItem("access_token")?true:false,//true登录，false未登录
     token:localStorage.getItem("access_token")
 }
 // reducer

@@ -17,7 +17,14 @@ async function GetUserinfo(data,cancelToken) {
     return res.json();
 }
 
+// 更新用户信息
+async function UpdateUserinfo(data) {
+    const res = await postFetch(commonUrl+"user/ak/"+window.platform_key+"/user/"+localStorage.getItem("user_id")+"/saveuser.json",data);
+    return res.json();
+}
+
 export {
     LoginSucc,
-    GetUserinfo
+    GetUserinfo,
+    UpdateUserinfo
 }

@@ -3,18 +3,27 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import "./index.less"
 import UserItem from "./userItem";
+import { authActionCreators } from "../../store/auth";
 import { Button } from "antd";
 
+const mapStateToProps=(state)=>{
+    return state
+}
+const mapDispatchToProps=(dispatch)=>{
+    return {
+        updateLoginState(isLogin){//更新登录状态
+            dispatch(authActionCreators.updateLoginState(isLogin))
+        }
+    }
+}
 class User extends Component {
     constructor(props){
         super(props)
-        this.state={
-
-        }
+        this.layout=this.layout.bind(this)
         this.items=[
             {link:"/login",imgSrc:require("../../common/images/order.png"),text:"我的订单",children:null},
             {
-                link:"/login1",
+                link:"/userinfo",
                 imgSrc:require("../../common/images/person.png"),
                 text:"个人信息",
                 children:<div>设置年级、教材版本</div>
@@ -27,7 +36,7 @@ class User extends Component {
                 imgSrc:require("../../common/images/recharge.png"),
                 text:"我的充值",
                 children:   <div>
-                                <div>学豆￥{1}</div>
+                                <div>学豆￥{this.props.user_info.beans}</div>
                                 <div style={{marginLeft:"15px"}}>立即充值</div>
                             </div>
             },
@@ -37,6 +46,11 @@ class User extends Component {
             {link:"/login9",imgSrc:require("../../common/images/setting.png"),text:"系统设置",children:null},
         ]
     }
+    layout(){
+        localStorage.clear();
+        this.props.updateLoginState(false)
+        this.props.history.push("/login")
+    }
     render(){
         return (
             <div>
@@ -44,7 +58,7 @@ class User extends Component {
                 <div className="user-header">
                     <div>
                         <img src={require("../../common/images/boy0.jpg")} />
-                        <p>gao</p>
+                        <p>{this.props.user_info.nickname}</p>
                     </div>
                 </div>
                 <div style={{background:"#fff"}}>
@@ -58,11 +72,11 @@ class User extends Component {
                         ))
                     }
                 </div>
-                <div style={{margin:"0.2rem"}}>
+                <div style={{margin:"0.2rem"}} onClick={this.layout}>
                     <Button style={{background:"#22d37a",color:"#fff",height:"0.8rem"}} block>退出登录</Button>
                 </div>
             </div>
         )
     }
 }
-export default User
+export default connect(mapStateToProps,mapDispatchToProps)(User)

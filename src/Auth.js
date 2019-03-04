@@ -21,7 +21,8 @@ function Authen(Compo){
         }
         render(){
             if(this.props.auth.isLogin){
-                return <Compo></Compo>
+                // 高阶函数子组件无法使用history等方法，需要传递
+                return <Compo {...this.props}></Compo>
             }else{
                 return null
             }
