@@ -21,7 +21,7 @@ class User extends Component {
         super(props)
         this.layout=this.layout.bind(this)
         this.items=[
-            {link:"/login",imgSrc:require("../../common/images/order.png"),text:"我的订单",children:null},
+            {link:"/myorders/all",imgSrc:require("../../common/images/order.png"),text:"我的订单",children:null},
             {
                 link:"/userinfo",
                 imgSrc:require("../../common/images/person.png"),

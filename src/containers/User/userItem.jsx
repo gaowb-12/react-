@@ -3,7 +3,7 @@ import { Icon } from "antd";
 
 function Item(props){
     return (
-        <div style={{padding: "0.25rem",borderBottom:"1px solid #f4f4f4"}}>
+        <div style={{padding: "0.3rem",borderBottom:"1px solid #f4f4f4"}}>
             <div className="user-item">
                 <div className="item-icon">
                     <img src={props.src}/>

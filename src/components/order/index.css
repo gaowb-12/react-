@@ -1,0 +1,29 @@
+.order-common {
+  overflow: hidden;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 0.2rem;
+  font-size: 0.22rem;
+}
+.order-common .order-common-img,
+.order-common .order-common-con {
+  float: left;
+}
+.order-common .order-common-img {
+  margin-right: 0.2rem;
+}
+.order-common .order-common-img img {
+  width: 1.4rem;
+  height: 1.8rem;
+}
+.order-common .order-common-con {
+  max-width: 50%;
+}
+.order-common p {
+  margin: 0;
+  margin-bottom: 0.05rem;
+}
+.order-common .order-common-money {
+  float: right;
+  text-align: right;
+}

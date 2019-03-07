@@ -1,0 +1,35 @@
+.list_order {
+  padding-top: 48px;
+}
+.order-item {
+  font-size: 0.22rem;
+  background-color: #fff;
+}
+.order-item-time {
+  overflow: hidden;
+  padding: 0.16rem;
+}
+.order-item-time .order-item-time_ {
+  float: left;
+}
+.order-item-time .order-item-state {
+  float: right;
+  color: #c53336;
+}
+.order-item-total {
+  text-align: right;
+  padding: 0.16rem;
+}
+.order-item-total p span {
+  margin-left: 0.15rem;
+  font-weight: bold;
+}
+.order-item-total ul {
+  margin-bottom: 0;
+}
+.order-item-total ul li {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 15px;
+  border: 1px solid #e2e2e2;
+}
