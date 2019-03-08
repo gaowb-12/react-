@@ -130,12 +130,13 @@ class MyOrder extends Component {
                                     coupons={item.coupons} 
                                     s_state={item.s_state}
                                 >
-                                {
-                                    item.product_info.map(product=>(
-                                        <Order key={product.pid} {...product} />
-                                    ))
-                                }
-                                    
+                                    <Link to={"/orderdetail/"+item.order_id}>
+                                        {
+                                            item.product_info.map(product=>(
+                                                <Order key={product.pid} {...product} />
+                                            ))
+                                        }
+                                    </Link>
                                 </OrderItem>
                             ))
                             :
@@ -144,6 +145,7 @@ class MyOrder extends Component {
                         :
                         null
                     }
+                    {/* 加载状态 */}
                     {
                         this.state.loadingMore?
                         <div style={{textAlign:"center"}}><img src={require("../../common/images/running.gif")} style={{width:"30px"}}/>正在努力加载</div>

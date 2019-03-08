@@ -9,6 +9,7 @@ const RegisterComponent = loadable(() => import('../containers/Register'))
 const UserComponent = loadable(() => import('../containers/User'))
 const UserInfoComponent = loadable(() => import('../containers/UserInfo'))
 const MyOrderComponent = loadable(() => import('../containers/MyOrder'))
+const OrderDetailComponent = loadable(() => import('../containers/OrderDetail'))
 
 // const routes=[
 //     {path:"/login",component:LoginComponent},
@@ -24,6 +25,7 @@ const routes=(
         <Route path="/user" component={Authen(UserComponent)}></Route>
         <Route path="/userinfo" component={Authen(UserInfoComponent)}></Route>
         <Route path="/myorders/:orderState" component={Authen(MyOrderComponent)}></Route>
+        <Route path="/orderdetail/:orderId" component={Authen(OrderDetailComponent)}></Route>
         <Redirect exact from="/*" to="/login" ></Redirect>
     </Switch>
     

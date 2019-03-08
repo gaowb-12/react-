@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux"
+import { Link } from "react-router-dom";
 import "./index.less"
-import { actionCreators } from "../../store/userInfo";
-import { Button } from "antd";
-import InfoItem from "./infoItem";
-import InfoItemLayer from "./infoItemLayer";
-import {UpdateUserinfo} from "../../api/fetch"
+import Order from '../../components/order';
 
 
 class UserInfo extends Component {
@@ -18,10 +14,10 @@ class UserInfo extends Component {
     }
 
     render(){
-        const userinfo=this.state.user_info
         return (
             <div>
-                
+                <h2>人教数字公司自营</h2>
+                <Order />
             </div>
         )
     }

@@ -22,8 +22,6 @@ function OrderItem(props){
                 </p>
                 {/* 操作订单 */}
                 <ul>
-                    
-                    
                     {
                         props.s_state==-1?(
                             <li>删除订单</li>
