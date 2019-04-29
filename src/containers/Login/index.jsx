@@ -26,8 +26,8 @@ class Login extends Component {
         this.getInput=this.getInput.bind(this)
         this.submit=this.submit.bind(this)
         this.state={
-            username:"15210053055",//用户名
-            password:"111111",//密码
+            username:"",//用户名
+            password:"",//密码
             dev_id:"101",
             dev_name:"gao",
             val:0
