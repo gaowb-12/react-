@@ -86,7 +86,7 @@ class Login extends Component {
                     className="input password"
                     onChange={this.getInput("password")}
                     value={this.state.password}
-                    placeholder="请输入密码"
+                    placeholder="输入密码"
                     />
                 </div>
                 {/* 忘记密码 */}
