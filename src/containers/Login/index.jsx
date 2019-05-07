@@ -75,7 +75,7 @@ class Login extends Component {
                     className="input username"
                     onChange={this.getInput("username")}
                     value={this.state.username}
-                    placeholder="请输入手机号/用户名"
+                    placeholder="输入手机号/用户名"
                     />
                 </div>
                 {/* 密码 */}
